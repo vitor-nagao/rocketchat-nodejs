@@ -1,0 +1,27 @@
+{
+  "name": "rocketchat",
+  "version": "1.0.0",
+  "description": "node.js library for Rocket.Chat REST API",
+  "main": "test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Vitor Nagao",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^6.4.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.3.2",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.2",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^19.0.2",
+    "webpack": "^2.3.3",
+    "webpack-node-externals": "^1.5.4"
+  },
+  "dependencies": {
+    "unirest": "^0.5.1"
+  }
+}
