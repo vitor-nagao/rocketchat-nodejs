@@ -1,13 +1,22 @@
 {
-  "name": "rocketchat",
+  "name": "rocketchat-node",
   "version": "1.0.0",
   "description": "node.js library for Rocket.Chat REST API",
-  "main": "test.js",
+  "main": "build/Client.compiled.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack src/Client.js",
+    "install": "webpack src/Client.js"
   },
   "author": "Vitor Nagao",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitor-nagao/rocketchat-nodejs.git"
+  },
+  "homepage": "https://github.com/vitor-nagao/rocketchat-nodejs.git#readme",
+  "dependencies": {
+    "unirest": "^0.5.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-jest": "^19.0.0",
@@ -20,8 +29,5 @@
     "jest": "^19.0.2",
     "webpack": "^2.3.3",
     "webpack-node-externals": "^1.5.4"
-  },
-  "dependencies": {
-    "unirest": "^0.5.1"
   }
 }
