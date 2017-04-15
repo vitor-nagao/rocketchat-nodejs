@@ -122,6 +122,18 @@ Available functions:
     username: 'rc_user',
     password: 'rc_password'
   });
+
+  Client.login().then(() => {
+
+    // write your API functions here
+    // example
+    Authentication.me().then((result) => {
+      var me = result;
+    });
+
+  }).catch((error) => {
+    console.log(error);
+  });
   ```
 
   ### <a id="Miscellaneous"></a>Miscellaneous
@@ -164,41 +176,41 @@ Available functions:
     name: 'Example Name',
     password: 'testpassword',
     username: 'test_user'
-  }).catch((result) => {
+  }).then((result) => {
     var create = result;
   });
 
   // /api/v1/users.delete
-  Users.delete({ userId: 'BsNr28znDkG8aeo7W' }).catch((result) => {
+  Users.delete({ userId: 'BsNr28znDkG8aeo7W' }).then((result) => {
     var delete = result
   });
 
   // /api/v1/users.getPresence
-  Users.getPresence({ userId: 'BsNr28znDkG8aeo7W' }).catch((result) => {
+  Users.getPresence({ userId: 'BsNr28znDkG8aeo7W' }).then((result) => {
     var getPresence = result
   });
 
 
   // /api/v1/users.info
-  Users.info({ userId: 'BsNr28znDkG8aeo7W' }).catch((result) => {
+  Users.info({ userId: 'BsNr28znDkG8aeo7W' }).then((result) => {
     var info = result
   });
 
 
   // /api/v1/users.list
-  Users.list({ userId: 'BsNr28znDkG8aeo7W' }).catch((result) => {
+  Users.list({ userId: 'BsNr28znDkG8aeo7W' }).then((result) => {
     var list = result
   });
 
 
   // /api/v1/users.setAvatar
-  Users.setAvatar({ avatarUrl: 'http://domain.tld/to/my/own/avatar.jpg' }).catch((result) => {
+  Users.setAvatar({ avatarUrl: 'http://domain.tld/to/my/own/avatar.jpg' }).then((result) => {
     var setAvatar = result
   });
 
 
   // /api/v1/users.update
-  Users.update({ userId: 'BsNr28znDkG8aeo7W', data: { name: 'new name', email: 'new@email.com'} }).catch((result) => {
+  Users.update({ userId: 'BsNr28znDkG8aeo7W', data: { name: 'new name', email: 'new@email.com'} }).then((result) => {
     var update = result
   });
   ```
