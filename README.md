@@ -102,21 +102,18 @@ Available functions:
   $ npm install rocketchat-nodejs
   ```
 
-  or
+  or install via git clone:
 
-  Install via git clone:
   ```
   $ git clone https://github.com/vitor-nagao/rocketchat-nodejs.git
   $ cd rocketchat-nodejs
   $ npm install
   ```
 
-  }
-
   ## Starting
 
   ```
-  var RocketChat = require('rocketchat-node).Client;
+  var RocketChat = require('rocketchat-nodejs).Client;
 
   var Client = new RocketChat({
     host: 'hostname.com',
