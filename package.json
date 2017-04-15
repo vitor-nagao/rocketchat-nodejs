@@ -1,6 +1,6 @@
 {
   "name": "rocketchat-nodejs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "node.js library for Rocket.Chat REST API",
   "main": "build/Client.compiled.js",
   "scripts": {
@@ -15,7 +15,9 @@
   },
   "homepage": "https://github.com/vitor-nagao/rocketchat-nodejs.git#readme",
   "dependencies": {
-    "unirest": "^0.5.1"
+    "unirest": "^0.5.1",
+    "webpack": "^2.3.3",
+    "webpack-node-externals": "^1.5.4"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
@@ -27,7 +29,5 @@
     "eslint-config-airbnb-base": "^11.1.2",
     "eslint-plugin-import": "^2.2.0",
     "jest": "^19.0.2",
-    "webpack": "^2.3.3",
-    "webpack-node-externals": "^1.5.4"
   }
 }
