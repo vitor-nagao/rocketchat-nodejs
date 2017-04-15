@@ -93,12 +93,13 @@ Available functions:
   - sms-incoming
   - users
 
+
   ## Installation
 
   Install with the node package manager [npm](http://npmjs.org/):
 
   ```
-  $ npm install rocketchat-node
+  $ npm install rocketchat-nodejs
   ```
 
   or
