@@ -47,10 +47,13 @@ export default class Request {
             resolve(response.body);
           }
         }
+        if (response.error) {
+          reject(new Error(response.error));
+        }
         if (response.body.error) {
           reject(new Error(`Status Code ${response.statusCode}: ${response.body.error}`));
         }
-        reject(new Error(response.error));
+
       });
     });
   }
