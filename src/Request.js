@@ -39,6 +39,7 @@ export default class Request {
           request.headers(header);
           request.send(parameters);
       }
+
       request.end((response) => {
         if (response.statusCode === 200) {
           if (response.body.data) {
@@ -47,13 +48,15 @@ export default class Request {
             resolve(response.body);
           }
         }
-        if (response.error) {
-          reject(new Error(response.error));
+        if (response.body) {
+          if (response.body.error) {
+            reject(new Error(`Status Code ${response.statusCode}: ${response.body.error}`));
+          }
+          if(response.body.status === 'error') {
+            reject(new Error(response.body.message));
+          }
         }
-        if (response.body.error) {
-          reject(new Error(`Status Code ${response.statusCode}: ${response.body.error}`));
-        }
-
+        reject(new Error(response.error.Error));
       });
     });
   }
