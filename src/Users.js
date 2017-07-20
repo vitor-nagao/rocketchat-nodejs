@@ -11,11 +11,11 @@ export default class Users extends Request {
   }
 
   getPresence(parameters = {}) {
-    return super.sendRequest('get', '/users.getPresence', parameters, { useToken: true, requestType: 'queryString' });
+    return super.sendRequest('get', '/users.getPresence', parameters, { authenticate: true, requestType: 'queryString' });
   }
 
   info(parameters) {
-    return super.sendRequest('get', '/users.info', parameters, { useToken: true, requestType: 'queryString' });
+    return super.sendRequest('get', '/users.info', parameters, { authenticate: true, requestType: 'queryString' });
   }
 
   list() {
@@ -23,7 +23,7 @@ export default class Users extends Request {
   }
 
   setAvatar(parameters) {
-    let options = { useToken: true };
+    let options = { authenticate: true };
     if (parameters.filepath) {
       options.requestType = 'file';
     }

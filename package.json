@@ -1,6 +1,6 @@
 {
   "name": "rocketchat-nodejs",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "node.js library for Rocket.Chat REST API",
   "main": "build/Client.compiled.js",
   "scripts": {
