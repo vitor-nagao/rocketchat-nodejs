@@ -17,6 +17,8 @@ export class Client {
     this.setScheme(args.scheme || 'http');
     this.setUserName(args.username || null);
     this.setPassword(args.password || null);
+    this.setAuthToken(args.token || null);
+    this.setUserId(args.userId || null);
   }
 
   setHost(host) {
