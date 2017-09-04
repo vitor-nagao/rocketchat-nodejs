@@ -83,11 +83,10 @@ export class Client {
 
   login() {
     return new Promise((resolve, reject) => {
-      this.Authentication().sendRequest('post', '/login', {
-        username: this.getUsername(),
-        password: this.getPassword()
-      })
-      .then((result) => {
+      this.Authentication().sendRequest('post', '/login',
+        { username: this.getUsername(), password: this.getPassword() },
+        { authenticate: false }
+      ).then((result) => {
         this.setAuthToken(result.authToken);
         this.setUserId(result.userId);
         resolve(result);
