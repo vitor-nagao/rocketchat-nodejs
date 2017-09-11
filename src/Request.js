@@ -16,7 +16,7 @@ export default class Request {
       let header = {};
       if (options.authenticate === true) {
         if (this.Client.getAuthToken() === null || this.Client.getUserId() === null) {
-          reject(new Error('You will need to provide the authToken and userId for any of the authenticated methods.'));
+          reject('You will need to provide the authToken and userId for any of the authenticated methods.');
         }
 
         header = {
@@ -41,6 +41,9 @@ export default class Request {
       }
 
       request.end((response) => {
+        if (response.error) {
+          reject('Rocket Chat API error: ' + response.error);
+        }
         if (response.statusCode === 200) {
           if (response.body.data) {
             resolve(response.body.data);
@@ -50,13 +53,12 @@ export default class Request {
         }
         if (response.body) {
           if (response.body.error) {
-            reject(new Error(`Status Code ${response.statusCode}: ${response.body.error}`));
+            reject(`Rocket Chat API response Status Code ${response.statusCode}: ${response.body.error}`);
           }
           if(response.body.status === 'error') {
-            reject(new Error(response.body.message));
+            reject('Rocket Chat API error: ' + response.body.message);
           }
         }
-        reject(new Error(response.error.Error));
       });
     });
   }
@@ -76,7 +78,7 @@ export default class Request {
       case 'head':
         return unirest.head(url);
       default:
-        return new Error('Method doesnt exist');
+        return new Error('Method doesn\'t exist');
     }
   }
 
