@@ -50,8 +50,8 @@ export default class Groups extends Request {
     return super.sendRequest('post', '/groups.leave', parameters);
   }
 
-  list() {
-    return super.sendRequest('get', '/groups.list');
+  list(parameters = {}) {
+    return super.sendRequest('get', '/groups.list', parameters);
   }
 
   open(parameters) {

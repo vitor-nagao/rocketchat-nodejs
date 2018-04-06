@@ -18,8 +18,8 @@ export default class Users extends Request {
     return super.sendRequest('get', '/users.info', parameters, { authenticate: true, requestType: 'queryString' });
   }
 
-  list() {
-    return super.sendRequest('get', '/users.list', {});
+  list(parameters = {}) {
+    return super.sendRequest('get', '/users.list', parameters);
   }
 
   setAvatar(parameters) {

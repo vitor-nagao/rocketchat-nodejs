@@ -54,12 +54,12 @@ export default class Channels extends Request {
     return super.sendRequest('post', '/channels.leave', parameters);
   }
 
-  listJoined() {
-    return super.sendRequest('get', '/channels.list.joined');
+  listJoined(parameters = {}) {
+    return super.sendRequest('get', '/channels.list.joined', parameters);
   }
 
-  list() {
-    return super.sendRequest('get', '/channels.list');
+  list(parameters = {}) {
+    return super.sendRequest('get', '/channels.list', parameters);
   }
 
   open(parameters) {

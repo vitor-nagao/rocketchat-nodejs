@@ -9,12 +9,12 @@ export default class Im extends Request {
     return super.sendRequest('get', '/im.history', parameters, { authenticate: true, requestType: 'queryString' });
   }
 
-  listEveryone() {
-    return super.sendRequest('get', '/im.list.everyone');
+  listEveryone(parameters = {}) {
+    return super.sendRequest('get', '/im.list.everyone', parameters);
   }
 
-  list() {
-    return super.sendRequest('get', '/im.list');
+  list(parameters = {}) {
+    return super.sendRequest('get', '/im.list', parameters);
   }
 
   messagesOthers(parameters) {
