@@ -6,8 +6,8 @@ export default class Integration extends Request {
     return super.sendRequest('post', '/integrations.create', parameters);
   }
 
-  list() {
-    return super.sendRequest('get', '/integrations.list');
+  list(parameters = {}) {
+    return super.sendRequest('get', '/integrations.list', parameters);
   }
 
   remove(parameters) {
